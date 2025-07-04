@@ -3,6 +3,8 @@ tags:
   - 标签内容
 ---
 
+# Sibelius2024下载运行教程
+
 # 下载官方安装包
 1. [Sibelius中文网站下载安装助手](https://cpv1.mairuan.com/download/sibelius.exe)
 2. [Sibelius Ultimate网站直接下载](https://cdn.avid.com/Sibelius/Sibelius/2025.4/L0UY6DG4/Sibelius_2025.4_Win.zip)
