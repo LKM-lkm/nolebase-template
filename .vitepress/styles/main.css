@@ -75,7 +75,7 @@ html, body {
 /* 标题所需要的字体 */
 @font-face {
   font-family: tengwarannatar;
-  src: url(/tengwar-annatar-glaemscrafu.woff2) format('woff2');
+  src: url(/PlayfairDisplay-Regular.woff2) format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: block;
@@ -84,7 +84,7 @@ html, body {
 /* 标题所需要的字体 */
 @font-face {
   font-family: tengwarannatar-bold;
-  src: url(/tengwar-annatar-glaemscrafu-bold.woff2) format('woff2');
+  src: url(/PlayfairDisplay-Bold.woff2) format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: block;
@@ -274,4 +274,21 @@ html, body {
 .dark .VPHero.VPHomeHero .actions a[href="https://github.com/nolebase/integrations"]:active {
   color: white;
   background-color: #4b4b4b;
+}
+
+.VPHomeHero .image img {
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  transition: 
+    box-shadow 0.3s cubic-bezier(.4,2,.6,1),
+    background 0.3s,
+    transform 0.3s cubic-bezier(.4,2,.6,1);
+  border: none;
 }
