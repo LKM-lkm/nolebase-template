@@ -1,7 +1,7 @@
 import process from 'node:process'
 import { defineConfig } from 'vitepress'
 import MarkdownItFootnote from 'markdown-it-footnote'
-import MarkdownItMathjax3 from 'markdown-it-mathjax3'
+import MarkdownItMark from 'markdown-it-mark'
 
 import { BiDirectionalLinks } from '@nolebase/markdown-it-bi-directional-links'
 import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
@@ -121,6 +121,26 @@ export default defineConfig({
       name: 'msapplication-TileColor',
       content: '#603cba',
     }],
+    [
+      'script',
+      {}, // 空对象表示没有额外属性
+      `window.MathJax = {
+        output: {
+          font: 'mathjax-termes' // 全局指定使用 mathjax-termes 字体
+        },
+         tex: {
+          inlineMath: [['$', '$'], ['\\\\(', '\\\\)']]
+        }
+      };`
+    ],
+    // 注入 MathJax v4 的主脚本 (-nofont 版本以优化性能)
+    [
+      'script',
+      {
+        src: 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-chtml-nofont.js',
+        async: 'true',
+      },
+    ],
     // Proxying Plausible through Netlify | Plausible docs
     // https://plausible.io/docs/proxy/guides/netlify
     ['script', { 'defer': 'true', 'data-domain': 'nolebase.ayaka.io', 'data-api': '/api/v1/page-external-data/submit', 'src': '/assets/page-external-data/js/script.js' }],
@@ -219,10 +239,10 @@ export default defineConfig({
       light: 'github-light',
       dark: 'one-dark-pro',
     },
-    math: true,
+    math: false,
     config: (md) => {
       md.use(MarkdownItFootnote)
-      md.use(MarkdownItMathjax3)
+      md.use(MarkdownItMark)
       md.use(BiDirectionalLinks({
         dir: process.cwd(),
       }))

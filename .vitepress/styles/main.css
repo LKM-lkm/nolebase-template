@@ -275,3 +275,15 @@ html, body {
   color: white;
   background-color: #4b4b4b;
 }
+
+/* 主页背景渐变效果 */
+.VPHome::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(173, 216, 230, 0.2), rgba(221, 160, 221, 0.2));
+  z-index: -1;
+}
